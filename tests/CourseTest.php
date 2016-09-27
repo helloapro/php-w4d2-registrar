@@ -129,93 +129,93 @@
             //Assert
             $this->assertEquals([$test_student], $result);
         }
-        // function testUpdate()
-        // {
-        //     //Arrange
-        //     $course_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $course_status = "ON-TIME";
-        //     $test_course = new course($course_number, $departure_time, $course_status);
-        //     $test_course->save();
-        //     $new_course_status = "DELAYED";
-        //     //Act
-        //     $test_course->update($new_course_status);
-        //     //Assert
-        //     $this->assertEquals("DELAYED", $test_course->getcourseStatus());
-        // }
-        // function testDelete()
-        // {
-        //     //Arrange
-        //     $course_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $course_status = "ON-TIME";
-        //     $test_course = new course($course_number, $departure_time, $course_status);
-        //     $test_course->save();
-        //     $course_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $course_status2 = "DELAYED";
-        //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
-        //     $test_course2->save();
-        //     //Act
-        //     $test_course->delete();
-        //     $result = course::getAll();
-        //     //Assert
-        //     $this->assertEquals([$test_course2], $result);
-        // }
-        // function testFind()
-        // {
-        //     //Arrange
-        //     $course_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $course_status = "ON-TIME";
-        //     $test_course = new course($course_number, $departure_time, $course_status);
-        //     $test_course->save();
-        //     $course_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $course_status2 = "DELAYED";
-        //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
-        //     $test_course2->save();
-        //     //Act
-        //     $result = course::find($test_course->getId());
-        //     //Assert
-        //     $this->assertEquals($test_course, $result);
-        // }
-        // function test_addcourseCities()
-        // {
-        //     //Arrange
-        //    $name = "Work stuff";
-        //    $id = 1;
-        //    $test_category = new Category($name, $id);
-        //    $test_category->save();
-        //    $description = "File reports";
-        //    $id2 = 2;
-        //    $test_task = new Task($description, $id2);
-        //    $test_task->save();
-        //    //Act
-        //    $test_category->addTask($test_task);
-        //    //Assert
-        //    $this->assertEquals($test_category->getTasks(), [$test_task]);
-        // }
-
-        // function test_deleteAll()
-        // {
-        //     //Arrange
-        //     // create more than one course
-        //     $course_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $course_status = "ON-TIME";
-        //     $test_course = new course($course_number, $departure_time, $course_status);
-        //     $test_course->save();
-        //     $course_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $course_status2 = "DELAYED";
-        //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
-        //     $test_course2->save();
-        //     //Act
-        //     course::deleteAll(); // delete them.
-        //     $result = course::getAll(); // get all to make sure they are gone.
-        //     //Assert
-        //     $this->assertEquals([], $result);
-        // }
-    }
+//         // function testUpdate()
+//         // {
+//         //     //Arrange
+//         //     $course_number = "AUX345";
+//         //     $departure_time = "11:23:00";
+//         //     $course_status = "ON-TIME";
+//         //     $test_course = new course($course_number, $departure_time, $course_status);
+//         //     $test_course->save();
+//         //     $new_course_status = "DELAYED";
+//         //     //Act
+//         //     $test_course->update($new_course_status);
+//         //     //Assert
+//         //     $this->assertEquals("DELAYED", $test_course->getcourseStatus());
+//         // }
+//         // function testDelete()
+//         // {
+//         //     //Arrange
+//         //     $course_number = "AUX345";
+//         //     $departure_time = "11:23:00";
+//         //     $course_status = "ON-TIME";
+//         //     $test_course = new course($course_number, $departure_time, $course_status);
+//         //     $test_course->save();
+//         //     $course_number2 = "GUT456";
+//         //     $departure_time2 = "12:45:00";
+//         //     $course_status2 = "DELAYED";
+//         //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
+//         //     $test_course2->save();
+//         //     //Act
+//         //     $test_course->delete();
+//         //     $result = course::getAll();
+//         //     //Assert
+//         //     $this->assertEquals([$test_course2], $result);
+//         // }
+//         // function testFind()
+//         // {
+//         //     //Arrange
+//         //     $course_number = "AUX345";
+//         //     $departure_time = "11:23:00";
+//         //     $course_status = "ON-TIME";
+//         //     $test_course = new course($course_number, $departure_time, $course_status);
+//         //     $test_course->save();
+//         //     $course_number2 = "GUT456";
+//         //     $departure_time2 = "12:45:00";
+//         //     $course_status2 = "DELAYED";
+//         //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
+//         //     $test_course2->save();
+//         //     //Act
+//         //     $result = course::find($test_course->getId());
+//         //     //Assert
+//         //     $this->assertEquals($test_course, $result);
+//         // }
+//         // function test_addcourseCities()
+//         // {
+//         //     //Arrange
+//         //    $name = "Work stuff";
+//         //    $id = 1;
+//         //    $test_category = new Category($name, $id);
+//         //    $test_category->save();
+//         //    $description = "File reports";
+//         //    $id2 = 2;
+//         //    $test_task = new Task($description, $id2);
+//         //    $test_task->save();
+//         //    //Act
+//         //    $test_category->addTask($test_task);
+//         //    //Assert
+//         //    $this->assertEquals($test_category->getTasks(), [$test_task]);
+//         // }
+//
+//         // function test_deleteAll()
+//         // {
+//         //     //Arrange
+//         //     // create more than one course
+//         //     $course_number = "AUX345";
+//         //     $departure_time = "11:23:00";
+//         //     $course_status = "ON-TIME";
+//         //     $test_course = new course($course_number, $departure_time, $course_status);
+//         //     $test_course->save();
+//         //     $course_number2 = "GUT456";
+//         //     $departure_time2 = "12:45:00";
+//         //     $course_status2 = "DELAYED";
+//         //     $test_course2 = new course($course_number2, $departure_time2, $course_status2);
+//         //     $test_course2->save();
+//         //     //Act
+//         //     course::deleteAll(); // delete them.
+//         //     $result = course::getAll(); // get all to make sure they are gone.
+//         //     //Assert
+//         //     $this->assertEquals([], $result);
+//         // }
+   }
 ?>

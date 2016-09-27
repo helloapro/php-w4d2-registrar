@@ -117,6 +117,33 @@
             $this->assertEquals([$test_student, $test_student2], $result);
         }
 
+        function test_getAllCourses()
+        {
+            //Arrange
+            // create more than one course to make sure getAll returns them all.
+            $course_name = "History";
+            $course_number = "HIS101";
+            $test_course = new Course($course_name, $course_number);
+            $test_course->save();
+
+            $course_name1 = "Math";
+            $course_number1 = "MT101";
+            $test_course1 = new Course($course_name, $course_number);
+            $test_course1->save();
+
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+            $test_student->addCourses($test_course);
+
+
+            //Act
+            $result = $test_student->getCourses();
+            //Assert
+            $this->assertEquals([$test_course], $result);
+        }
+
         // function testUpdate()
         // {
         //     //Arrange
