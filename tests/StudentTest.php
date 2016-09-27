@@ -144,77 +144,56 @@
             $this->assertEquals([$test_course], $result);
         }
 
-        // function testUpdate()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     $new_student_status = "DELAYED";
-        //     //Act
-        //     $test_student->update($new_student_status);
-        //     //Assert
-        //     $this->assertEquals("DELAYED", $test_student->getStudentStatus());
-        // }
-        // function testDelete()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     $student_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $student_status2 = "DELAYED";
-        //     $test_student2 = new Student($student_number2, $departure_time2, $student_status2);
-        //     $test_student2->save();
-        //     //Act
-        //     $test_student->delete();
-        //     $result = Student::getAll();
-        //     //Assert
-        //     $this->assertEquals([$test_student2], $result);
-        // }
-        // function testFind()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     $student_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $student_status2 = "DELAYED";
-        //     $test_student2 = new Student($student_number2, $departure_time2, $student_status2);
-        //     $test_student2->save();
-        //     //Act
-        //     $result = Student::find($test_student->getId());
-        //     //Assert
-        //     $this->assertEquals($test_student, $result);
-        // }
+        function testUpdate()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+            $new_name = "helloapro";
+            //Act
+            $test_student->update($new_name);
+            //Assert
+            $this->assertEquals("helloapro", $test_student->getName());
+        }
 
-        // function test_deleteAll()
-        // {
-        //     //Arrange
-        //     // create more than one student
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     $student_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $student_status2 = "DELAYED";
-        //     $test_student2 = new Student($student_number2, $departure_time2, $student_status2);
-        //     $test_student2->save();
-        //     //Act
-        //     Student::deleteAll(); // delete them.
-        //     $result = Student::getAll(); // get all to make sure they are gone.
-        //     //Assert
-        //     $this->assertEquals([], $result);
-        // }
+        function testDelete()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+
+            $name2 = "helloapro";
+            $enrollment_date2 = "2016-04-11";
+            $test_student2 = new Student($name2, $enrollment_date2);
+            $test_student2->save();
+            //Act
+            $test_student->delete();
+            $result = Student::getAll();
+            //Assert
+            $this->assertEquals([$test_student2], $result);
+        }
+
+        function testFind()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+
+            $name2 = "helloapro";
+            $enrollment_date2 = "2016-04-11";
+            $test_student2 = new Student($name2, $enrollment_date2);
+            $test_student2->save();
+            //Act
+            $result = Student::find($test_student->getId());
+            //Assert
+            $this->assertEquals($test_student, $result);
+        }
+
     }
 ?>

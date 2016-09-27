@@ -63,28 +63,30 @@
             return $courses;
         }
 
-        // function update($new_student_status)
-        // {
-        //     $GLOBALS['DB']->exec("UPDATE students SET student_status = '{$new_student_status}' WHERE id = {$this->getId()};");
-        //     $this->setFlightStatus($new_student_status);
-        // }
-        // function delete()
-        // {
-        //     $GLOBALS['DB']->exec("DELETE FROM students WHERE id = {$this->getId()};");
-        // }
-        // static function find($search_id)
-        // {
-        //     $found_student = null;
-        //     $students = Flight::getAll();
-        //     foreach($students as $student) {
-        //         $student_id = $student->getId();
-        //         if ($student_id == $search_id) {
-        //             $found_student = $student;
-        //         }
-        //     }
-        //    return $found_student;
-        // }
-        
+        function update($new_name)
+        {
+            $GLOBALS['DB']->exec("UPDATE students SET name = '{$new_name}' WHERE id = {$this->getId()};");
+            $this->setName($new_name);
+        }
+
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM students WHERE id = {$this->getId()};");
+        }
+
+        static function find($search_id)
+        {
+            $found_student = null;
+            $students = Student::getAll();
+            foreach($students as $student) {
+                $student_id = $student->getId();
+                if ($student_id == $search_id) {
+                    $found_student = $student;
+                }
+            }
+           return $found_student;
+        }
+
 
 //static methods
         static function getAll()
