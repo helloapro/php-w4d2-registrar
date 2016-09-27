@@ -22,11 +22,11 @@
             {% endif %}
             <hr>
 
-            <form class="form-group" action="/enroll_in_course" method="post">
+            <form class="form-group" action="/enroll_in_course/{{ student.getId }}" method="post">
                 <h6>Pick a dank course to enroll this student IRL:</h6>
                 <select id = "selectCourse" class="" name="course_id">
                     {% for course in all_courses %}
-                        <option value= {{ course.getId }}>{{ course.getCourseName }}</option>
+                        <option value = {{ course.getId }}>{{ course.getCourseName }}</option>
                     {% endfor %}
                 </select>
                 <button type="submit" class="btn-primary">Enrolllllllllll</button>
