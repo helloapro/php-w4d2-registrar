@@ -26,7 +26,8 @@
                 {% for student in students %}
                 <li>
                 <a href='#{{ student.getId }}' data-toggle="modal">✏️  </a>
-                {{ student.getName }} Enrolled since: {{ student.getEnrollmentDate }}
+                <a href='/student_page/{{ student.getId }}'>{{ student.getName }} </a> Enrolled since: {{ student.getEnrollmentDate }}
+
                 <!-- Modal -->
                 <div class="modal fade " id="{{ student.getId }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
@@ -53,6 +54,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- end of Modal -->
+
                 </li>
                 {% endfor %}
             </ul>

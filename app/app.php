@@ -54,6 +54,11 @@
         return $app->redirect('/');
     });
 
+    $app->get('/student_page/{id}', function($id) use ($app) {
+        $student = Student::find($id);
+        return $app['twig']->render('student-page.html.twig', array('student' => $student, 'courses' => $student->getCourses(), 'all_courses' => Course::getAll()));
+    });
+
 
 
 
