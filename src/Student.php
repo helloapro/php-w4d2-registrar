@@ -74,6 +74,7 @@
             $GLOBALS['DB']->exec("DELETE FROM students WHERE id = {$this->getId()};");
         }
 
+//static methods
         static function find($search_id)
         {
             $found_student = null;
@@ -87,8 +88,6 @@
            return $found_student;
         }
 
-
-//static methods
         static function getAll()
         {
             $returned_students = $GLOBALS['DB']->query("SELECT * FROM students;");

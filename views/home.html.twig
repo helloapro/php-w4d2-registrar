@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+    <title>Dank Meme University</title>
+</head>
+    <body>
+        <div class="jumbotron">
+            <h1>Welcome to Dank Meme University</h1>
+        </div>
+        <div class="container">
+            <br>
+            <form action="/student-list" method="get">
+                <button type="submit" class="btn btn-primary btn-lg btn-block .btn" name="students">View IRL Students</button>
+            </form>
+            <br>
+            <form action="/course-list" method="post">
+                <button type="submit" class="btn btn-primary btn-lg btn-block .btn" name="courses">View Dank Courses</button>
+            </form>
+        </div>
+    </body>
+</html>
