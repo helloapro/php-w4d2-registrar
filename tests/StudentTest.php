@@ -21,130 +21,102 @@
         {
             //Arrange
             // no need to pass in id because it is null by default.
-            $name = "AUX345";
+            $name = "KatyCodes";
             $enrollment_date = "2016-09-06";
             $test_student = new Student($name, $enrollment_date);
             //Act
             $result = $test_student->getName();
             //Assert
-            // id is null here, but that is not what we are testing. We are only interested in student number.
+            // id is null here, but that is not what we are testing. We are only interested in student name.
             $this->assertEquals($name, $result);
         }
-        // function test_setStudentNumber()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $new_student_number = "GUT456";
-        //     $departure_time = "11:23";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     //Act
-        //     $test_student->setStudentNumber($new_student_number);
-        //     $result = $test_student->getStudentNumber();
-        //     //Assert
-        //     $this->assertEquals($new_student_number, $result);
-        // }
-        // function test_getDepartureTime()
-        // {
-        //     //Arrange
-        //     // no need to pass in id because it is null by default.
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     //Act
-        //     $result = $test_student->getDepartureTime();
-        //     //Assert
-        //     // id is null here, but that is not what we are testing. We are only interested in student number.
-        //     $this->assertEquals($departure_time, $result);
-        // }
-        // function test_setDepartureTime()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23";
-        //     $new_departure_time = "12:45";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     //Act
-        //     $test_student->setDepartureTime($new_departure_time);
-        //     $result = $test_student->getDepartureTime();
-        //     //Assert
-        //     $this->assertEquals($new_departure_time, $result);
-        // }
-        // function test_getStudentStatus()
-        // {
-        //     //Arrange
-        //     // no need to pass in id because it is null by default.
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     //Act
-        //     $result = $test_student->getStudentStatus();
-        //     //Assert
-        //     // id is null here, but that is not what we are testing. We are only interested in student number.
-        //     $this->assertEquals($student_status, $result);
-        // }
-        // function test_setStudentStatus()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23";
-        //     $student_status = "ON-TIME";
-        //     $new_student_status = "DELAYED";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     //Act
-        //     $test_student->setStudentStatus($new_student_status);
-        //     $result = $test_student->getStudentStatus();
-        //     //Assert
-        //     $this->assertEquals($new_student_status, $result);
-        // }
-        // function test_getId()
-        // {
-        //     //Arrange
-        //     $id = 1;
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status, $id);
-        //     //Act
-        //     $result = $test_student->getId();
-        //     //Assert
-        //     $this->assertEquals($id, $result); //make sure id returned is the one we put in, not null.
-        // }
-        // function test_save()
-        // {
-        //     //Arrange
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     //Act
-        //     $result = Student::getAll();
-        //     //Assert
-        //     $this->assertEquals($test_student, $result[0]);
-        // }
-        // function test_getAll()
-        // {
-        //     //Arrange
-        //     // create more than one student to make sure getAll returns them all.
-        //     $student_number = "AUX345";
-        //     $departure_time = "11:23:00";
-        //     $student_status = "ON-TIME";
-        //     $test_student = new Student($student_number, $departure_time, $student_status);
-        //     $test_student->save();
-        //     $student_number2 = "GUT456";
-        //     $departure_time2 = "12:45:00";
-        //     $student_status2 = "DELAYED";
-        //     $test_student2 = new Student($student_number2, $departure_time2, $student_status2);
-        //     $test_student2->save();
-        //     //Act
-        //     $result = Student::getAll();
-        //     //Assert
-        //     $this->assertEquals([$test_student, $test_student2], $result);
-        // }
+        function test_setName()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $new_name = "helloapro";
+            //Act
+            $test_student->setName($new_name);
+            $result = $test_student->getName();
+            //Assert
+            $this->assertEquals($new_name, $result);
+        }
+
+        function test_getEnrollmentDate()
+        {
+            //Arrange
+            // no need to pass in id because it is null by default.
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            //Act
+            $result = $test_student->getEnrollmentDate();
+            //Assert
+            // id is null here, but that is not what we are testing. We are only interested in enrollment date.
+            $this->assertEquals($enrollment_date, $result);
+        }
+
+        function test_setEnrollmentDate()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $new_enrollment_date = "2016-09-22";
+            //Act
+            $test_student->setEnrollmentDate($new_enrollment_date);
+            $result = $test_student->getEnrollmentDate();
+            //Assert
+            $this->assertEquals($new_enrollment_date, $result);
+        }
+
+        function test_getId()
+        {
+            //Arrange
+            $id = 1;
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date, $id);
+            //Act
+            $result = $test_student->getId();
+            //Assert
+            $this->assertEquals($id, $result); //make sure id returned is the one we put in, not null.
+        }
+
+        function test_save()
+        {
+            //Arrange
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+            //Act
+            $result = Student::getAll();
+            //Assert
+            $this->assertEquals($test_student, $result[0]);
+        }
+
+        function test_getAll()
+        {
+            //Arrange
+            // create more than one student to make sure getAll returns them all.
+            $name = "KatyCodes";
+            $enrollment_date = "2016-09-06";
+            $test_student = new Student($name, $enrollment_date);
+            $test_student->save();
+
+            $name2 = "helloapro";
+            $enrollment_date2 = "2016-04-11";
+            $test_student2 = new Student($name2, $enrollment_date2);
+            $test_student2->save();
+            //Act
+            $result = Student::getAll();
+            //Assert
+            $this->assertEquals([$test_student, $test_student2], $result);
+        }
+
         // function testUpdate()
         // {
         //     //Arrange
@@ -212,6 +184,7 @@
         //    //Assert
         //    $this->assertEquals($test_category->getTasks(), [$test_task]);
         // }
+
         // function test_deleteAll()
         // {
         //     //Arrange

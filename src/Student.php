@@ -35,7 +35,7 @@
 //methods
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO students (name, enrollment_date) VALUES   ('{$this->getName()}', '{$this->getEnrollmentDate()}';");
+            $GLOBALS['DB']->exec("INSERT INTO students (name, enrollment_date) VALUES ('{$this->getName()}', '{$this->getEnrollmentDate()}');");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
         // function update($new_student_status)
@@ -73,11 +73,12 @@
                 $name = $student['name'];
                 $enrollment_date = $student['enrollment_date'];
                 $id = $student['id'];
-                $new_student = new Flight($name, $enrollment_date, $id);
+                $new_student = new Student($name, $enrollment_date, $id);
                 array_push($students, $new_student);
             }
             return $students;
         }
+
         static function deleteAll()
         {
           $GLOBALS['DB']->exec("DELETE FROM students;");
