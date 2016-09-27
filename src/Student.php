@@ -84,10 +84,7 @@
         //     }
         //    return $found_student;
         // }
-        // function addFlightCities($city1, $city2)
-        // {
-        //     $GLOBALS['DB']->exec("INSERT INTO cities_students (departure_city_id, arrival_city_id, student_id) VALUES ({$city->getId()}, {$city->getId()}, {$this->getId()});");
-        // }
+        
 
 //static methods
         static function getAll()

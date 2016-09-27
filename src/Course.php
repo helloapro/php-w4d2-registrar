@@ -60,32 +60,28 @@
             return $students;
         }
 
+        function update($new_course)
+        {
+            $GLOBALS['DB']->exec("UPDATE courses SET course_name = '{$new_course}' WHERE id = {$this->getId()};");
+            $this->setCourseName($new_course);
+        }
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM courses WHERE id = {$this->getId()};");
+        }
+        static function find($search_id)
+        {
+            $found_course = null;
+            $courses = Course::getAll();
+            foreach($courses as $course) {
+                $course_id = $course->getId();
+                if ($course_id == $search_id) {
+                    $found_course = $course;
+                }
+            }
+           return $found_course;
+        }
 
-        // function update($new_course_status)
-        // {
-        //     $GLOBALS['DB']->exec("UPDATE courses SET course_status = '{$new_course_status}' WHERE id = {$this->getId()};");
-        //     $this->setFlightStatus($new_course_status);
-        // }
-        // function delete()
-        // {
-        //     $GLOBALS['DB']->exec("DELETE FROM courses WHERE id = {$this->getId()};");
-        // }
-        // static function find($search_id)
-        // {
-        //     $found_course = null;
-        //     $courses = Flight::getAll();
-        //     foreach($courses as $course) {
-        //         $course_id = $course->getId();
-        //         if ($course_id == $search_id) {
-        //             $found_course = $course;
-        //         }
-        //     }
-        //    return $found_course;
-        // }
-        // function addFlightCities($city1, $city2)
-        // {
-        //     $GLOBALS['DB']->exec("INSERT INTO cities_courses (departure_city_id, arrival_city_id, course_id) VALUES ({$city->getId()}, {$city->getId()}, {$this->getId()});");
-        // }
 
 //static methods
         static function getAll()
